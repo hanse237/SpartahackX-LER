@@ -1,9 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bpd5tcfc014ar"]
+[gd_scene load_steps=17 format=3 uid="uid://bpd5tcfc014ar"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5r1l3"]
 [ext_resource type="Texture2D" uid="uid://o0ljafkj11c4" path="res://assets/wall1.png" id="2_gd0am"]
 [ext_resource type="PackedScene" uid="uid://bt6f74qds3qxt" path="res://clickable.tscn" id="2_y4qq2"]
+[ext_resource type="Texture2D" uid="uid://c575rqcirfq8w" path="res://assets/wall2.png" id="4_lvwe3"]
 [ext_resource type="Texture2D" uid="uid://dh6txbnfjlq3t" path="res://assets/wall3.png" id="4_omfuw"]
+[ext_resource type="Texture2D" uid="uid://ckex3k0vhc08g" path="res://assets/wall4.png" id="6_wbn2e"]
+[ext_resource type="Texture2D" uid="uid://dsijqxqkbt482" path="res://assets/winmessage.png" id="7_mnx4w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sy6e2"]
 bg_color = Color(0.960784, 0.870588, 0.501961, 1)
@@ -11,11 +14,14 @@ bg_color = Color(0.960784, 0.870588, 0.501961, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ag1c6"]
 texture = ExtResource("2_gd0am")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_46tp8"]
-bg_color = Color(0.323693, 0.703659, 0.136759, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6defw"]
+texture = ExtResource("4_lvwe3")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6j5mc"]
 texture = ExtResource("4_omfuw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ox31a"]
+texture = ExtResource("6_wbn2e")
 
 [sub_resource type="LabelSettings" id="LabelSettings_8pywh"]
 font_size = 24
@@ -23,6 +29,9 @@ font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ilbky"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lejki"]
+texture = ExtResource("7_mnx4w")
 
 [sub_resource type="LabelSettings" id="LabelSettings_a7sok"]
 font_size = 48
@@ -56,20 +65,6 @@ layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_ag1c6")
 
-[node name="Page1" parent="PanelContainer/ScreenOne" instance=ExtResource("2_y4qq2")]
-visible = false
-position = Vector2(100, 100)
-message = "page1"
-active = true
-imagePath = "res://icon.svg"
-
-[node name="Door" parent="PanelContainer/ScreenOne" instance=ExtResource("2_y4qq2")]
-visible = false
-position = Vector2(658, 284)
-message = "door"
-active = true
-imagePath = "res://icon.svg"
-
 [node name="Bookshelf" parent="PanelContainer/ScreenOne" instance=ExtResource("2_y4qq2")]
 visible = false
 message = "null"
@@ -83,20 +78,76 @@ message = "chair"
 active = true
 imagePath = "res://assets/1x1.png"
 
+[node name="Page1" parent="PanelContainer/ScreenOne" instance=ExtResource("2_y4qq2")]
+position = Vector2(673, 333)
+scale = Vector2(100, 100)
+message = "page1"
+active = true
+imagePath = "res://icon.svg"
+
+[node name="Page2" parent="PanelContainer/ScreenOne" instance=ExtResource("2_y4qq2")]
+position = Vector2(352, 425)
+scale = Vector2(125, 75)
+message = "page2"
+active = true
+imagePath = "res://assets/1x1.png"
+
+[node name="Page3" parent="PanelContainer/ScreenOne" instance=ExtResource("2_y4qq2")]
+position = Vector2(194, 335)
+scale = Vector2(100, 100)
+message = "page3"
+active = true
+imagePath = "res://assets/1x1.png"
+
+[node name="Page4" parent="PanelContainer/ScreenOne" instance=ExtResource("2_y4qq2")]
+position = Vector2(295, 336)
+scale = Vector2(100, 100)
+message = "page4"
+active = true
+imagePath = "res://assets/1x1.png"
+
+[node name="Page5" parent="PanelContainer/ScreenOne" instance=ExtResource("2_y4qq2")]
+position = Vector2(603, 505)
+scale = Vector2(90, 90)
+message = "page5"
+active = true
+imagePath = "res://assets/1x1.png"
+
+[node name="Page6" parent="PanelContainer/ScreenOne" instance=ExtResource("2_y4qq2")]
+position = Vector2(505, 506)
+scale = Vector2(100, 100)
+message = "page6"
+active = true
+imagePath = "res://assets/1x1.png"
+
+[node name="Page7" parent="PanelContainer/ScreenOne" instance=ExtResource("2_y4qq2")]
+position = Vector2(219, 513)
+scale = Vector2(125, 100)
+message = "page7"
+active = true
+imagePath = "res://assets/1x1.png"
+
+[node name="Page8" parent="PanelContainer/ScreenOne" instance=ExtResource("2_y4qq2")]
+position = Vector2(768, 424)
+scale = Vector2(75, 75)
+message = "page8"
+active = true
+imagePath = "res://assets/1x1.png"
+
+[node name="Page9" parent="PanelContainer/ScreenOne" instance=ExtResource("2_y4qq2")]
+position = Vector2(691, 427)
+scale = Vector2(75, 75)
+message = "page9"
+active = true
+imagePath = "res://assets/1x1.png"
+
 [node name="ScreenTwo" type="Panel" parent="PanelContainer"]
 visible = false
 layout_mode = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_46tp8")
+theme_override_styles/panel = SubResource("StyleBoxTexture_6defw")
 
-[node name="Page2" parent="PanelContainer/ScreenTwo" instance=ExtResource("2_y4qq2")]
-visible = false
-position = Vector2(1000, 500)
-message = "page2"
-active = true
-imagePath = "res://icon.svg"
-
-[node name="Lever" parent="PanelContainer/ScreenTwo" instance=ExtResource("2_y4qq2")]
+[node name="Button" parent="PanelContainer/ScreenTwo" instance=ExtResource("2_y4qq2")]
 message = "lever"
 active = true
 imagePath = "res://icon.svg"
@@ -114,16 +165,10 @@ active = true
 imagePath = "res://assets/pt1.png"
 
 [node name="ScreenThree" type="Panel" parent="PanelContainer"]
+visible = false
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_6j5mc")
-
-[node name="Page3" parent="PanelContainer/ScreenThree" instance=ExtResource("2_y4qq2")]
-visible = false
-position = Vector2(100, 100)
-message = "page3"
-active = true
-imagePath = "res://icon.svg"
 
 [node name="Painting2" parent="PanelContainer/ScreenThree" instance=ExtResource("2_y4qq2")]
 position = Vector2(981, 83)
@@ -143,18 +188,20 @@ imagePath = "res://assets/1x1.png"
 visible = false
 layout_mode = 2
 mouse_filter = 1
-
-[node name="Page4" parent="PanelContainer/ScreenFour" instance=ExtResource("2_y4qq2")]
-visible = false
-position = Vector2(100, 100)
-message = "page4"
-active = true
-imagePath = "res://icon.svg"
+theme_override_styles/panel = SubResource("StyleBoxTexture_ox31a")
 
 [node name="Painting3" parent="PanelContainer/ScreenFour" instance=ExtResource("2_y4qq2")]
+position = Vector2(148, 410)
+scale = Vector2(0.25, 0.25)
 message = "pt3"
 active = true
 imagePath = "res://assets/pt3.png"
+
+[node name="Door" parent="PanelContainer/ScreenFour" instance=ExtResource("2_y4qq2")]
+position = Vector2(845, 368)
+message = "door"
+active = true
+imagePath = "res://icon.svg"
 
 [node name="UpButton" type="Button" parent="."]
 clip_contents = true
@@ -205,10 +252,16 @@ visible = false
 layout_mode = 0
 offset_right = 1366.0
 offset_bottom = 768.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ilbky")
 
 [node name="TitleScreen" type="Panel" parent="PanelContainer3"]
 layout_mode = 2
+
+[node name="EndScreen" type="Panel" parent="PanelContainer3"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_lejki")
 
 [node name="Label2" type="Label" parent="."]
 visible = false

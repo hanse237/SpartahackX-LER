@@ -5,7 +5,14 @@ extends Control
 						   $PanelContainer/ScreenFour]
 @onready var activePanel = $PanelContainer/ScreenOne
 
-var flags = {"chair": false, "key": false, "chest": false, "lever": false}
+# Flags tracking progression
+var flags = {"chair": false,
+			 "key": false,
+			 "chest": false,
+			 "lever": false,
+			 "fire": false}
+
+# Flags tracking pages found
 var pages = [false, false, false, false]
 
 # Called when the node enters the scene tree for the first time.
@@ -14,7 +21,7 @@ func _ready() -> void:
 	$PanelContainer/ScreenTwo/Page2.connect("clicked", _on_clicked)
 	$PanelContainer/ScreenThree/Page3.connect("clicked", _on_clicked)
 	$PanelContainer/ScreenFour/Page4.connect("clicked", _on_clicked)
-	$PanelContainer/ScreenOne/Door.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenFour/Door.connect("clicked", _on_clicked)
 	$PanelContainer/ScreenThree/Fire.connect("clicked", _on_clicked)
 	$PanelContainer/ScreenOne/Chair.connect("clicked", _on_clicked)
 	$PanelContainer/ScreenTwo/Painting1.connect("clicked", _on_clicked)
@@ -30,6 +37,7 @@ func _process(delta: float) -> void:
 func _on_button_pressed() -> void:
 	$Button.visible = false
 	$Label2.visible = false
+	$PanelContainer3/TitleScreen.visible = false
 	$PanelContainer3.visible = false
 
 
@@ -76,19 +84,26 @@ func _on_clicked(message, active) -> void:
 			else:
 				$Label.text = "You pull the level"
 				flags["lever"] = true
+				flags["chest"] = false
 		"box":
 			if not flags["key"]:
 				$Label.text = "It's locked tight."
 			else:
-				$Label.text = "You found a key under the chair."
-				flags["key"] = true
+				$Label.text = "Inside the chest, you find a note."
+				flags["chest"] = true
+				flags["key"] = false
 		"chair":
 			if not flags["chair"]:
 				$Label.text = "There's no time to sit now."
 			else:
-				$Label.text = "Inside the chest, you find a note."
-				flags["chest"] = true
+				$Label.text = "You found a key under the chair."
+				flags["key"] = true
+				flags["chair"] = false
 		"fire":
 			$Label.text = "The fire rages."
 		"door":
-			$Label.text = "It's locked."
+			if not flags["fire"]:
+				$Label.text = "It's locked."
+			else:
+				$PanelContainer3/EndScreen.visible = true
+				$PanelContainer3.visible = true
