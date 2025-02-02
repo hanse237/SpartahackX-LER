@@ -3,6 +3,11 @@
 [ext_resource type="Script" path="res://image_window.gd" id="1_vfxm3"]
 
 [node name="Window" type="Window"]
+initial_position = 4
+transient = true
 script = ExtResource("1_vfxm3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+centered = false
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]

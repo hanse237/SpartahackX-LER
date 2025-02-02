@@ -4,11 +4,22 @@ extends Control
 						   $PanelContainer/ScreenThree,
 						   $PanelContainer/ScreenFour]
 @onready var activePanel = $PanelContainer/ScreenOne
-@export var imageWindow : PackedScene
+
+var flags = {"chair": false, "key": false, "chest": false, "lever": false}
+var pages = [false, false, false, false]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$PanelContainer/ScreenOne/Page1.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenTwo/Page2.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenThree/Page3.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenFour/Page4.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenOne/Door.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenThree/Fire.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenOne/Chair.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenTwo/Painting1.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenThree/Painting2.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenFour/Painting3.connect("clicked", _on_clicked)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,23 +55,40 @@ func set_active_panel(dir) -> void:
 	activePanel.visible = true
 
 
-func _on_button_2_pressed() -> void:
-	$Label.text += 'a'
-
-
 func _on_clicked(message, active) -> void:
 	if not active:
 		$Label.text = message
 		return
 	
 	match message:
-		"page1":
-			var page = imageWindow.instantiate()
-			page.imagePath = "res://icon.svg"
-			add_child.call_deferred(page)
-		"page2":
-			pass
-		"page3":
-			pass
-		"page4":
-			pass
+		"page1", "page2", "page3", "page4", "pt1", "pt2", "pt3":
+			if message[1] == 'a':
+				pages[int(message[4]) - 1] = true
+				if not false in pages:
+					flags["chair"] = true
+			var pathTemplate = "res://assets/%s.png"
+			var window = preload("res://imageWindow.tscn").instantiate()
+			window.imagePath = pathTemplate % message
+			add_child.call_deferred(window)
+		"lever":
+			if not flags["chest"]:
+				$Label.text = "It resists your pull."
+			else:
+				$Label.text = "You pull the level"
+				flags["lever"] = true
+		"box":
+			if not flags["key"]:
+				$Label.text = "It's locked tight."
+			else:
+				$Label.text = "You found a key under the chair."
+				flags["key"] = true
+		"chair":
+			if not flags["chair"]:
+				$Label.text = "There's no time to sit now."
+			else:
+				$Label.text = "Inside the chest, you find a note."
+				flags["chest"] = true
+		"fire":
+			$Label.text = "The fire rages."
+		"door":
+			$Label.text = "It's locked."

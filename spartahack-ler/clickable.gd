@@ -26,6 +26,7 @@ func _on_area_2d_mouse_exited() -> void:
 	mouse_in = false
 
 
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if Input.is_action_pressed("LeftClick") and mouse_in == true:
+		mouse_in = false
 		emit_signal("clicked", message, active)
