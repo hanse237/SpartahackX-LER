@@ -13,14 +13,23 @@ var flags = {"chair": false,
 			 "fire": false}
 
 # Flags tracking pages found
-var pages = [false, false, false, false]
+var pages = [false, false, false, false, false, false,
+			 false, false, false, false, false, false]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$PanelContainer/ScreenOne/Page1.connect("clicked", _on_clicked)
-	$PanelContainer/ScreenTwo/Page2.connect("clicked", _on_clicked)
-	$PanelContainer/ScreenThree/Page3.connect("clicked", _on_clicked)
-	$PanelContainer/ScreenFour/Page4.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenOne/Page2.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenOne/Page3.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenOne/Page4.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenOne/Page5.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenOne/Page6.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenOne/Page7.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenOne/Page8.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenOne/Page9.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenTwo/Page10.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenThree/Page11.connect("clicked", _on_clicked)
+	$PanelContainer/ScreenFour/Page12.connect("clicked", _on_clicked)
 	$PanelContainer/ScreenFour/Door.connect("clicked", _on_clicked)
 	$PanelContainer/ScreenThree/Fire.connect("clicked", _on_clicked)
 	$PanelContainer/ScreenOne/Chair.connect("clicked", _on_clicked)
@@ -69,7 +78,7 @@ func _on_clicked(message, active) -> void:
 		return
 	
 	match message:
-		"page1", "page2", "page3", "page4", "pt1", "pt2", "pt3":
+		"page1", "page2", "page3", "page4", "page5", "page6", "page7", "page8", "page9", "page10", "page11", "page12", "pt1", "pt2", "pt3":
 			if message[1] == 'a':
 				pages[int(message[4]) - 1] = true
 				if not false in pages:

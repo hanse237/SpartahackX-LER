@@ -65,12 +65,6 @@ layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_ag1c6")
 
-[node name="Bookshelf" parent="PanelContainer/ScreenOne" instance=ExtResource("2_y4qq2")]
-visible = false
-message = "null"
-active = true
-imagePath = "res://icon.svg"
-
 [node name="Chair" parent="PanelContainer/ScreenOne" instance=ExtResource("2_y4qq2")]
 position = Vector2(1119, 400)
 scale = Vector2(395, 326)
@@ -83,7 +77,7 @@ position = Vector2(673, 333)
 scale = Vector2(100, 100)
 message = "page1"
 active = true
-imagePath = "res://icon.svg"
+imagePath = "res://assets/1x1.png"
 
 [node name="Page2" parent="PanelContainer/ScreenOne" instance=ExtResource("2_y4qq2")]
 position = Vector2(352, 425)
@@ -164,6 +158,13 @@ message = "pt1"
 active = true
 imagePath = "res://assets/pt1.png"
 
+[node name="Page10" parent="PanelContainer/ScreenTwo" instance=ExtResource("2_y4qq2")]
+position = Vector2(1029, 322)
+scale = Vector2(0.1, 0.1)
+message = "page10"
+active = true
+imagePath = "res://assets/page10.png"
+
 [node name="ScreenThree" type="Panel" parent="PanelContainer"]
 visible = false
 layout_mode = 2
@@ -184,6 +185,13 @@ message = "fire"
 active = true
 imagePath = "res://assets/1x1.png"
 
+[node name="Page11" parent="PanelContainer/ScreenThree" instance=ExtResource("2_y4qq2")]
+position = Vector2(102, 229)
+scale = Vector2(0.1, 0.1)
+message = "page11"
+active = true
+imagePath = "res://assets/page11.png"
+
 [node name="ScreenFour" type="Panel" parent="PanelContainer"]
 visible = false
 layout_mode = 2
@@ -202,6 +210,13 @@ position = Vector2(845, 368)
 message = "door"
 active = true
 imagePath = "res://icon.svg"
+
+[node name="Page12" parent="PanelContainer/ScreenFour" instance=ExtResource("2_y4qq2")]
+position = Vector2(1291, 465)
+scale = Vector2(0.1, 0.1)
+message = "page12"
+active = true
+imagePath = "res://assets/page12.png"
 
 [node name="UpButton" type="Button" parent="."]
 clip_contents = true
