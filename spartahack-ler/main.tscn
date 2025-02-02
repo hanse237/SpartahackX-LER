@@ -420,7 +420,6 @@ active = true
 imagePath = "res://assets/doorc.png"
 
 [node name="PanelContainer3" type="PanelContainer" parent="."]
-visible = false
 layout_mode = 0
 offset_right = 1366.0
 offset_bottom = 768.0
@@ -436,7 +435,6 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_s41v4")
 
 [node name="Label2" type="Label" parent="."]
-visible = false
 custom_minimum_size = Vector2(1366, 568)
 layout_mode = 2
 offset_right = 1366.0
@@ -448,7 +446,6 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Button" type="Button" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 483.0
 offset_top = 593.0

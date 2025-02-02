@@ -88,6 +88,10 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
+	if pages[12]:
+		get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
+		get_tree().quit()
+
 	$Button.visible = false
 	$Label2.visible = false
 	$PanelContainer3/TitleScreen.visible = false
@@ -188,6 +192,8 @@ func _on_clicked(message, active) -> void:
 				$PanelContainer3.visible = true
 				$Label2.text = "Congratulations!"
 				$Label2.visible = true
+				$Button.text = "Escape"
+				$Button.visible = true
 
 
 func _on_symbol_click(message, active) -> void:
