@@ -206,10 +206,11 @@ active = true
 imagePath = "res://assets/pt3.png"
 
 [node name="Door" parent="PanelContainer/ScreenFour" instance=ExtResource("2_y4qq2")]
-position = Vector2(845, 368)
+position = Vector2(845, 338)
+scale = Vector2(0.75, 0.75)
 message = "door"
 active = true
-imagePath = "res://icon.svg"
+imagePath = "res://assets/door_closed.png"
 
 [node name="Page12" parent="PanelContainer/ScreenFour" instance=ExtResource("2_y4qq2")]
 position = Vector2(1291, 465)
@@ -217,6 +218,14 @@ scale = Vector2(0.1, 0.1)
 message = "page12"
 active = true
 imagePath = "res://assets/page12.png"
+
+[node name="DoorOpen" parent="PanelContainer/ScreenFour" instance=ExtResource("2_y4qq2")]
+visible = false
+position = Vector2(845, 338)
+scale = Vector2(0.75, 0.75)
+message = "door"
+active = true
+imagePath = "res://assets/door_open.png"
 
 [node name="UpButton" type="Button" parent="."]
 clip_contents = true
@@ -299,6 +308,125 @@ offset_right = 883.0
 offset_bottom = 700.0
 theme_override_font_sizes/font_size = 72
 text = "Begin"
+
+[node name="Sym1" parent="." instance=ExtResource("2_y4qq2")]
+position = Vector2(1201, 727)
+scale = Vector2(0.5, 0.5)
+message = "sym1"
+active = true
+imagePath = "res://assets/bookc.png"
+
+[node name="Sym2" parent="." instance=ExtResource("2_y4qq2")]
+position = Vector2(1141, 727)
+scale = Vector2(0.5, 0.5)
+message = "sym2"
+active = true
+imagePath = "res://assets/buttonc.png"
+
+[node name="Sym3" parent="." instance=ExtResource("2_y4qq2")]
+position = Vector2(1081, 727)
+scale = Vector2(0.5, 0.5)
+message = "sym3"
+active = true
+imagePath = "res://assets/chairc.png"
+
+[node name="Sym4" parent="." instance=ExtResource("2_y4qq2")]
+position = Vector2(1021, 727)
+scale = Vector2(0.5, 0.5)
+message = "sym4"
+active = true
+imagePath = "res://assets/doc.png"
+
+[node name="Sym5" parent="." instance=ExtResource("2_y4qq2")]
+position = Vector2(961, 727)
+scale = Vector2(0.5, 0.5)
+message = "sym5"
+active = true
+imagePath = "res://assets/firec.png"
+
+[node name="Sym6" parent="." instance=ExtResource("2_y4qq2")]
+position = Vector2(901, 727)
+scale = Vector2(0.5, 0.5)
+message = "sym6"
+active = true
+imagePath = "res://assets/helpc.png"
+
+[node name="Sym7" parent="." instance=ExtResource("2_y4qq2")]
+position = Vector2(841, 727)
+scale = Vector2(0.5, 0.5)
+message = "sym7"
+active = true
+imagePath = "res://assets/highc.png"
+
+[node name="Sym8" parent="." instance=ExtResource("2_y4qq2")]
+position = Vector2(781, 727)
+scale = Vector2(0.5, 0.5)
+message = "sym8"
+active = true
+imagePath = "res://assets/Ic.png"
+
+[node name="Sym9" parent="." instance=ExtResource("2_y4qq2")]
+position = Vector2(721, 727)
+scale = Vector2(0.5, 0.5)
+message = "sym9"
+active = true
+imagePath = "res://assets/keyc.png"
+
+[node name="Sym10" parent="." instance=ExtResource("2_y4qq2")]
+position = Vector2(661, 727)
+scale = Vector2(0.5, 0.5)
+message = "sym10"
+active = true
+imagePath = "res://assets/notc.png"
+
+[node name="Sym11" parent="." instance=ExtResource("2_y4qq2")]
+position = Vector2(601, 727)
+scale = Vector2(0.5, 0.5)
+message = "sym11"
+active = true
+imagePath = "res://assets/personc.png"
+
+[node name="Sym12" parent="." instance=ExtResource("2_y4qq2")]
+position = Vector2(541, 727)
+scale = Vector2(0.5, 0.5)
+message = "sym12"
+active = true
+imagePath = "res://assets/thisc.png"
+
+[node name="Sym13" parent="." instance=ExtResource("2_y4qq2")]
+position = Vector2(481, 727)
+scale = Vector2(0.5, 0.5)
+message = "sym13"
+active = true
+imagePath = "res://assets/wantc.png"
+
+[node name="Sym14" parent="." instance=ExtResource("2_y4qq2")]
+position = Vector2(421, 727)
+scale = Vector2(0.5, 0.5)
+message = "sym14"
+active = true
+imagePath = "res://assets/whatc.png"
+
+[node name="Sym15" parent="." instance=ExtResource("2_y4qq2")]
+position = Vector2(361, 727)
+scale = Vector2(0.5, 0.5)
+message = "sym15"
+active = true
+imagePath = "res://assets/wherec.png"
+
+[node name="Sym16" parent="." instance=ExtResource("2_y4qq2")]
+position = Vector2(301, 727)
+scale = Vector2(0.5, 0.5)
+message = "sym16"
+active = true
+imagePath = "res://assets/Youc.png"
+
+[node name="Sym17" parent="." instance=ExtResource("2_y4qq2")]
+position = Vector2(241, 727)
+scale = Vector2(0.5, 0.5)
+message = "sym17"
+active = true
+imagePath = "res://assets/doorc.png"
 
 [connection signal="pressed" from="UpButton" to="." method="_on_up_button_pressed"]
 [connection signal="pressed" from="DownButton" to="." method="_on_down_button_pressed"]
