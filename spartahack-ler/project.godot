@@ -22,6 +22,10 @@ window/size/viewport_height=768
 window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
 
+[global_group]
+
+chars=""
+
 [input]
 
 LeftClick={

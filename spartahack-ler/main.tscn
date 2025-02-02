@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bpd5tcfc014ar"]
+[gd_scene load_steps=16 format=3 uid="uid://bpd5tcfc014ar"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5r1l3"]
 [ext_resource type="Texture2D" uid="uid://o0ljafkj11c4" path="res://assets/wall1.png" id="2_gd0am"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c575rqcirfq8w" path="res://assets/wall2.png" id="4_lvwe3"]
 [ext_resource type="Texture2D" uid="uid://dh6txbnfjlq3t" path="res://assets/wall3.png" id="4_omfuw"]
 [ext_resource type="Texture2D" uid="uid://ckex3k0vhc08g" path="res://assets/wall4.png" id="6_wbn2e"]
-[ext_resource type="Texture2D" uid="uid://dsijqxqkbt482" path="res://assets/winmessage.png" id="7_mnx4w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sy6e2"]
 bg_color = Color(0.960784, 0.870588, 0.501961, 1)
@@ -30,8 +29,8 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ilbky"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lejki"]
-texture = ExtResource("7_mnx4w")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s41v4"]
+bg_color = Color(0.176471, 0.176471, 0.176471, 0.658824)
 
 [sub_resource type="LabelSettings" id="LabelSettings_a7sok"]
 font_size = 48
@@ -49,9 +48,11 @@ layout_mode = 0
 offset_top = 568.0
 offset_right = 1366.0
 offset_bottom = 768.0
+mouse_filter = 2
 
 [node name="UIBackground" type="Panel" parent="PanelContainer2"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sy6e2")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -141,15 +142,11 @@ layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_6defw")
 
-[node name="Button" parent="PanelContainer/ScreenTwo" instance=ExtResource("2_y4qq2")]
-message = "lever"
-active = true
-imagePath = "res://icon.svg"
-
 [node name="Box" parent="PanelContainer/ScreenTwo" instance=ExtResource("2_y4qq2")]
+position = Vector2(394, 429)
 message = "box"
 active = true
-imagePath = "res://icon.svg"
+imagePath = "res://assets/chestbottom.png"
 
 [node name="Painting1" parent="PanelContainer/ScreenTwo" instance=ExtResource("2_y4qq2")]
 position = Vector2(400, 100)
@@ -164,6 +161,38 @@ scale = Vector2(0.1, 0.1)
 message = "page10"
 active = true
 imagePath = "res://assets/page10.png"
+
+[node name="BoxClosed" parent="PanelContainer/ScreenTwo" instance=ExtResource("2_y4qq2")]
+position = Vector2(394, 429)
+message = "box"
+active = true
+imagePath = "res://assets/chesttopclose.png"
+
+[node name="BoxOpen" parent="PanelContainer/ScreenTwo" instance=ExtResource("2_y4qq2")]
+visible = false
+position = Vector2(394, 429)
+message = "box"
+active = true
+imagePath = "res://assets/chesttopopen.png"
+
+[node name="ButtonOff" parent="PanelContainer/ScreenTwo" instance=ExtResource("2_y4qq2")]
+position = Vector2(1213, 243)
+message = "lever"
+active = true
+imagePath = "res://assets/buttonoff.png"
+
+[node name="ButtonOn" parent="PanelContainer/ScreenTwo" instance=ExtResource("2_y4qq2")]
+visible = false
+position = Vector2(1213, 243)
+message = "lever"
+active = true
+imagePath = "res://assets/button_on.png"
+
+[node name="ButtonPressed" parent="PanelContainer/ScreenTwo" instance=ExtResource("2_y4qq2")]
+visible = false
+position = Vector2(1213, 243)
+message = "The button is stuck down."
+imagePath = "res://assets/button_pressed.png"
 
 [node name="ScreenThree" type="Panel" parent="PanelContainer"]
 visible = false
@@ -270,44 +299,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 text_overrun_behavior = 2
-
-[node name="PanelContainer3" type="PanelContainer" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 1366.0
-offset_bottom = 768.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ilbky")
-
-[node name="TitleScreen" type="Panel" parent="PanelContainer3"]
-layout_mode = 2
-
-[node name="EndScreen" type="Panel" parent="PanelContainer3"]
-visible = false
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_lejki")
-
-[node name="Label2" type="Label" parent="."]
-visible = false
-custom_minimum_size = Vector2(1366, 568)
-layout_mode = 2
-offset_right = 1366.0
-offset_bottom = 568.0
-text = "You find yourself in a strange room, filled with a strange script."
-label_settings = SubResource("LabelSettings_a7sok")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="Button" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 483.0
-offset_top = 593.0
-offset_right = 883.0
-offset_bottom = 700.0
-theme_override_font_sizes/font_size = 72
-text = "Begin"
 
 [node name="Sym1" parent="." instance=ExtResource("2_y4qq2")]
 position = Vector2(1201, 727)
@@ -427,6 +418,44 @@ scale = Vector2(0.5, 0.5)
 message = "sym17"
 active = true
 imagePath = "res://assets/doorc.png"
+
+[node name="PanelContainer3" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1366.0
+offset_bottom = 768.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ilbky")
+
+[node name="TitleScreen" type="Panel" parent="PanelContainer3"]
+layout_mode = 2
+
+[node name="EndScreen" type="Panel" parent="PanelContainer3"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s41v4")
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+custom_minimum_size = Vector2(1366, 568)
+layout_mode = 2
+offset_right = 1366.0
+offset_bottom = 568.0
+text = "You find yourself in a strange room, filled with a strange script."
+label_settings = SubResource("LabelSettings_a7sok")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 483.0
+offset_top = 593.0
+offset_right = 883.0
+offset_bottom = 700.0
+theme_override_font_sizes/font_size = 72
+text = "Begin"
 
 [connection signal="pressed" from="UpButton" to="." method="_on_up_button_pressed"]
 [connection signal="pressed" from="DownButton" to="." method="_on_down_button_pressed"]
