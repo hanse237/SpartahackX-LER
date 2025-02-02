@@ -1,11 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bt6f74qds3qxt"]
+[gd_scene load_steps=3 format=3 uid="uid://bt6f74qds3qxt"]
 
 [ext_resource type="Script" path="res://clickable.gd" id="1_xfsq3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2t418"]
 size = Vector2(1, 1)
-
-[sub_resource type="ImageTexture" id="ImageTexture_5vhef"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_xfsq3")
@@ -16,7 +14,6 @@ script = ExtResource("1_xfsq3")
 shape = SubResource("RectangleShape2D_2t418")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-texture = SubResource("ImageTexture_5vhef")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

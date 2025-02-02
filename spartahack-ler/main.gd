@@ -19,5 +19,6 @@ func _on_button_2_pressed() -> void:
 	$Label.text += 'a'
 
 
-func _on_clicked(message) -> void:
-	$Label.text = message
+func _on_clicked(message, action) -> void:
+	if not action:
+		$Label.text = message

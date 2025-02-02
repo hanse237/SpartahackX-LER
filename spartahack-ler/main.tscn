@@ -30,7 +30,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_py5r4")
 
 [node name="Node2D" parent="PanelContainer/Panel2" instance=ExtResource("2_y4qq2")]
 position = Vector2(100, 100)
-scale = Vector2(200, 200)
+message = "test"
+imagePath = "res://icon.svg"
 
 [node name="Panel" type="Panel" parent="PanelContainer"]
 visible = false
