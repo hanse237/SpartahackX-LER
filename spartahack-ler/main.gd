@@ -152,6 +152,7 @@ func _on_clicked(message, active) -> void:
 				flags["chest"] = false
 				var window = preload("res://imageWindow.tscn").instantiate()
 				window.imagePath = "res://assets/winmessage.png"
+				window.add_to_group("burn")
 				add_child.call_deferred(window)
 				pages[12] = true
 				$PanelContainer/ScreenTwo/ButtonOn.visible = false
@@ -181,6 +182,8 @@ func _on_clicked(message, active) -> void:
 				$Label.text = "The fire rages."
 			else:
 				flags["fire"] = true
+				for burn in get_tree().get_nodes_in_group("burn"):
+					burn.queue_free()
 				$Label.text = "You burn the page and hear a click."
 				$PanelContainer/ScreenFour/Door.visible = false
 				$PanelContainer/ScreenFour/DoorOpen.visible = true

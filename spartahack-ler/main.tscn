@@ -143,10 +143,10 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_6defw")
 
 [node name="Box" parent="PanelContainer/ScreenTwo" instance=ExtResource("2_y4qq2")]
-position = Vector2(394, 429)
+position = Vector2(394, 419)
 message = "box"
 active = true
-imagePath = "res://assets/chestbottom.png"
+imagePath = "res://assets/chestbottom_new.png"
 
 [node name="Painting1" parent="PanelContainer/ScreenTwo" instance=ExtResource("2_y4qq2")]
 position = Vector2(400, 100)
@@ -163,17 +163,17 @@ active = true
 imagePath = "res://assets/page10.png"
 
 [node name="BoxClosed" parent="PanelContainer/ScreenTwo" instance=ExtResource("2_y4qq2")]
-position = Vector2(394, 429)
+position = Vector2(394, 419)
 message = "box"
 active = true
-imagePath = "res://assets/chesttopclose.png"
+imagePath = "res://assets/chest_closed_clean.png"
 
 [node name="BoxOpen" parent="PanelContainer/ScreenTwo" instance=ExtResource("2_y4qq2")]
 visible = false
-position = Vector2(394, 429)
+position = Vector2(394, 419)
 message = "box"
 active = true
-imagePath = "res://assets/chesttopopen.png"
+imagePath = "res://assets/chestbottom_new.png"
 
 [node name="ButtonOff" parent="PanelContainer/ScreenTwo" instance=ExtResource("2_y4qq2")]
 position = Vector2(1213, 243)
